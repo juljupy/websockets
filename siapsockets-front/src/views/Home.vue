@@ -11,5 +11,13 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
+
+  mounted() {
+    // console.log('Mounted', this.$echo)
+    this.$echo.channel('public-channel')
+      .listen('.NewMessage', async (data: unknown) => {
+        console.log('New message received', data)
+      })
+  },
 })
 </script>

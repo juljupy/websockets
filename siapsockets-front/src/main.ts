@@ -1,8 +1,13 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
+import LaravlEcho from './plugins/LaravelEcho'
+// import { io } from 'socket.io-client'
+import pusherJs from 'pusher-js'
 import { routes } from './routes'
 import './index.css'
+window.Pusher = pusherJs
+// window.io = io
 
 const app = createApp(App)
 
@@ -30,4 +35,15 @@ if (import.meta.hot) {
 }
 
 app.use(router)
+app.use(LaravlEcho, {
+  broadcaster: 'pusher',
+  key: 'app-key',
+  wsHost: window.location.hostname,
+  wsPort: 6001,
+  forceTLS: false,
+  encrypted: true,
+  enableLogging: true,
+  disableStats: true,
+  enabledTransports: ['ws', 'wss'],
+})
 app.mount('#app')
