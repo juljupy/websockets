@@ -6,8 +6,7 @@
     "build": "vite build",
     "start": "npm run dev",
     "lint": "eslint . --ext .js,.ts,.vue",
-    "lint:fix": "eslint . --ext .js,.ts,.vue --fix",
-    "prepare": "husky install"
+    "lint:fix": "eslint . --ext .js,.ts,.vue --fix"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2",
@@ -29,7 +28,6 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^8.17.0",
     "eslint-plugin-vue": "^9.1.1",
-    "husky": "^8.0.1",
     "lint-staged": "^13.0.1",
     "postcss": "^8.4.14",
     "prettier": "^2.7.0",
