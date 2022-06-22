@@ -9,10 +9,15 @@
     "lint:fix": "eslint . --ext .js,.ts,.vue --fix"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.6.5",
+    "@heroicons/vue": "^1.0.6",
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.2",
     "@vitejs/plugin-vue": "^2.3.3",
+    "axios": "^0.27.2",
     "laravel-echo": "^1.11.7",
+    "pinia": "^2.0.14",
+    "pinia-plugin-persistedstate": "^1.6.1",
     "pusher-js": "^7.1.1-beta",
     "socket.io-client": "^4.5.1",
     "tailwindcss": "^3.1.2",

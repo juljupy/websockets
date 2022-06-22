@@ -6,6 +6,7 @@ import LaravlEcho from './plugins/LaravelEcho'
 import pusherJs from 'pusher-js'
 import { routes } from './routes'
 import './index.css'
+import { createPinia } from 'pinia'
 window.Pusher = pusherJs
 // window.io = io
 
@@ -35,15 +36,16 @@ if (import.meta.hot) {
 }
 
 app.use(router)
-app.use(LaravlEcho, {
-  broadcaster: 'pusher',
-  key: 'app-key',
-  wsHost: window.location.hostname,
-  wsPort: 6001,
-  forceTLS: false,
-  encrypted: true,
-  enableLogging: true,
-  disableStats: true,
-  enabledTransports: ['ws', 'wss'],
-})
-app.mount('#app')
+  .use(createPinia())
+  .use(LaravlEcho, {
+    broadcaster: 'pusher',
+    key: 'app-key',
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    forceTLS: false,
+    encrypted: true,
+    enableLogging: true,
+    disableStats: true,
+    enabledTransports: ['ws', 'wss'],
+  })
+  .mount('#app')

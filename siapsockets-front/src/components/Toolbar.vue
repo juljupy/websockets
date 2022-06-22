@@ -1,15 +1,18 @@
 <template>
-  <ChannelsWrapper />
+  <div class="bg-white shadow w-full p-6">
+    Toolbar
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import ChannelsWrapper from '../components/ChannelsWrapper.vue'
-
 export default defineComponent({
-  components: {
-    ChannelsWrapper,
+  setup() {
+    return {}
   },
 })
 </script>
+
+<style>
+</style>
